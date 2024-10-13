@@ -9,23 +9,26 @@
     <div style="display: flex;">
         <div style="border-right: 2px solid navy;padding: 30px 15px;">
             <h1>Сейчас играют:</h1>
-            <ul style="list-style: none; padding: 0; margin: 0;">
+            <ul style="list-style: none; padding: 0; margin: 0; display:flex;flex-direction: column;">
                 {% for player in players %}
 
                 <li
-                    style="border:1px solid #999; padding: 10px; margin:0 15px 15px 0;background: #0d6efd; color:#fff; border-radius: 5px; width:150px;">
-                    <b>{{ player.name }}</b> <br>играет с {{player.start_date|date:"H:i" }}
+                    style="border:1px solid #999; padding: 10px; margin:0 15px 15px 0;background: #01a8a8; border-radius: 5px; min-width:150px;">
+                    <b style="color:#fff;">{{ player.name }}</b> <br>играет с {{player.start_date|date:"H:i" }}
                 </li>
                 {% endfor %}
             </ul>
         </div>
         <div style="padding: 30px 15px;">
             <h1>Ожидают:</h1>
-            <ul style="list-style: none;padding: 0; margin: 0;">
+            <ul style="list-style: none;padding: 0; margin: 0;display:flex;">
                 {% for geek in geeks %}
                 <li
-                    style="border:1px solid #999; padding: 10px; margin:0 15px 15px 0; background: #ffc107; border-radius:5px;width:150px;">
-                    <b>{{ geek.name }}</b> <br>в очереди с {{ geek.create_date|date:"H:i" }}
+                    style="border:1px solid #999; padding: 10px; margin:0 15px 15px 0; background: #ffc107; border-radius:5px;min-width:150px;">
+                    <b><span style="color:#008080;font-family:Arial;">N_00{{ forloop.counter }}</span>
+                        {{ geek.name }}</b><br>
+
+                    в очереди с {{ geek.create_date|date:"H:i" }}
                 </li>
                 {% endfor %}
             </ul>
