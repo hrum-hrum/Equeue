@@ -4,7 +4,7 @@
     <title>Электронная очередь (табло)</title>
 </head>
 
-<body>
+<body style="font-family: Arial, Helvetica, sans-serif;">
     <h1>Электронная очередь (табло) <small style="font-size:16px; color:#666;">{{now|date:"d.m.Y H:i:s"}}</small></h1>
     <div style="display: flex;">
         <div style="border-right: 2px solid navy;padding: 30px 15px;">
@@ -25,8 +25,8 @@
                 {% for geek in geeks %}
                 <li
                     style="border:1px solid #999; padding: 10px; margin:0 15px 15px 0; background: #ffc107; border-radius:5px;min-width:150px;">
-                    <b><span style="color:#008080;font-family:Arial;">N_00{{ forloop.counter }}</span>
-                        {{ geek.name }}</b><br>
+                    <b><span style="color:#008080;">
+                            N_00{{ forloop.counter }}</span>&nbsp;&nbsp;{{geek.name }}</b><br>
 
                     в очереди с {{ geek.create_date|date:"H:i" }}
                 </li>
